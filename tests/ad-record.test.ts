@@ -1,9 +1,18 @@
-import { createPool } from "mysql2/promise";
+import { AdRecord } from "../records/ad.record";
 
-export const pool = createPool({
-    host: "localhost",
-    user: "root",
-    database: "megak_ads",
-    namedPlaceholders: true,
-    decimalNumbers: true,
+
+const defaultObj = {
+    name: 'Test Name',
+    description: 'blah',
+    url: 'https://megak.pl',
+    price: 0,
+    lat: 9,
+    lon: 9,
+};
+
+test('Can Build AdRecord', () => {
+    const ad = new AdRecord(defaultObj);
+
+    expect(ad.name).toBe('Test Name');
+    expect(ad.description).toBe('blah');
 });
