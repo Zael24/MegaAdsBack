@@ -3,6 +3,7 @@ import cors from "cors";
 import "express-async-errors";
 import { ValidationError, handleErrors } from "./utils/errors";
 import { rateLimit } from "express-rate-limit";
+import { adRouter } from "./routers/ad.router";
 
 
 const app = express();
@@ -16,9 +17,7 @@ app.use(rateLimit({
      max: 100, //Limit each IP to 100 requests per `window` 
 }));
 
-// app.get('/', async (req, res) => {
-//     throw new ValidationError('Oh damn my guy!');
-// });
+app.use('/ad', adRouter);
 
 app.use(handleErrors);
 
