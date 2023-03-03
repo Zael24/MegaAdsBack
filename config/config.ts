@@ -1,7 +1,7 @@
 export const config = {
-    dbHost: 'localhost',
-    dbUser: 'root',
+    dbHost: "localhost",
+    dbUser: "root",
     dbPassword: '',
-    dbDatabase: 'megak_ads',
+    dbDatabase: "megak_ads",
     corsOrigin: 'http://localhost:3000',
 };
